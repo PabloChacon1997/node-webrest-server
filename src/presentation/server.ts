@@ -1,4 +1,5 @@
 import express, { Router } from 'express';
+import compression from 'compression'
 
 
 interface Options {
@@ -24,6 +25,7 @@ export class Server {
     //* Middleware
     this.app.use(express.json());
     this.app.use(express.urlencoded({extended: true}));
+    this.app.use(compression());
     //* Public Folder
 
     //* Routes
